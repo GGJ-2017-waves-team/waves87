@@ -1,0 +1,47 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scene4.rpy", line 19, in script
+    "(Sake)"
+  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
+    _window_show()
+  File "renpy/common/000window.rpy", line 60, in _window_show
+    renpy.with_statement(trans)
+IOError: Couldn't find file 'cruisin_tough.mp3'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/scene4.rpy", line 19, in script
+    "(Sake)"
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/ast.py", line 587, in execute
+    statement_name("say")
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/ast.py", line 43, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
+    _window_show()
+  File "renpy/common/000window.rpy", line 60, in _window_show
+    renpy.with_statement(trans)
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/exports.py", line 1376, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/display/core.py", line 2062, in do_with
+    clear=clear)
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/display/core.py", line 2492, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/display/core.py", line 2791, in interact_core
+    renpy.audio.audio.interact()
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/audio/audio.py", line 930, in interact
+    periodic()
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/audio/audio.py", line 864, in periodic
+    c.periodic()
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/audio/audio.py", line 403, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/audio/audio.py", line 67, in load
+    rv = renpy.loader.load(fn)
+  File "/Volumes/renpy-6.99.12.2-sdk/renpy-6.99.12.2-sdk/renpy/loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'cruisin_tough.mp3'.
+
+Darwin-16.0.0-x86_64-i386-64bit
+Ren'Py 6.99.12.2.2029
+waves87 1.0
