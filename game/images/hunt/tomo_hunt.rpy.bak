@@ -1,37 +1,35 @@
-label terry_begin_hunt:
+label tomo_begin_hunt:
     play music "hunt/BattleSuperShort.mp3" loop
 
-
-    
     image bg battle_bg = "battle_bg.jpg"
 
-    image terry_target:
-        "hunt/terry_head.png"
+    image tomo_target:
+        "hunt/tomo_head.png"
 
-    $ targets_needed = 4
+    $ targets_needed = 3
 
     $ shots_fired = 0
     $ targets_hit = 0
 
-    call terry_hunting from _call_terry_hunting
+    call tomo_hunting
 
-label terry_finished_him:
+label tomo_finished_him:
     return
     
-label terry_hunting:
+label tomo_hunting:
     
     $ import random
     $ xposi = random.randint(340, 940)
     $ yposi = random.randint(100, 420)
 
-    transform terry_moving_target:
-        ypos yposi - 50
+    transform tomo_moving_target:
+        ypos yposi - 20
         linear 3.0 xpos 2000
         xpos -300
 
     scene bg battle_bg
-    show terry_target at terry_moving_target
-    $ position = At(ImageReference("terry_target"), terry_moving_target)
+    show tomo_target at tomo_moving_target
+    $ position = At(ImageReference("tomo_target"), tomo_moving_target)
     show expression position
 
     $ ui.imagebutton("hunt/fist.png", "hunt/fist_hover.png", 
@@ -44,31 +42,33 @@ label terry_hunting:
         if position.xpos < xposi + 50:
             $ targets_hit = targets_hit + 1
             if targets_hit >= targets_needed:
-                jump terry_finish_him
+                jump tomo_finish_him
             play audio "punch-hit.ogg"
             with hpunch
-            "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed!"
-            call terry_hunting from _call_terry_hunting_1
+            "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
+            call tomo_hunting
     
     if targets_hit >= targets_needed:
-        jump terry_finish_him
+        jump tomo_finish_him
     
     play audio "miss_sound.ogg"
     with vpunch
-    "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed!"
-    call terry_hunting from _call_terry_hunting_2
+    "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
+    
+    call tomo_hunting
     
     return
 
-label terry_finish_him:
+label tomo_finish_him:
     
     stop music fadeout 3.0
 
-    image terry_finished:
-        "hunt/terry_head.png"
+    image tomo_finished:
+        "hunt/tomo_head.png"
         xalign 0.5 yalign 0.5
 
-    hide terry_finished with hpunch
-    show terry_finished with pixellate
-    stop music fadeout 2.0 
+    hide tomo_finished with hpunch
+    show tomo_finished with pixellate
+    stop music fadeout 2.0
+
     return

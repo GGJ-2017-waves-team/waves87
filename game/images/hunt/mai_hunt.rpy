@@ -13,7 +13,7 @@ label mai_begin_hunt:
     $ shots_fired = 0
     $ targets_hit = 0
 
-    call mai_hunting
+    call mai_hunting from _call_mai_hunting
 
 label mai_finished_him:
     return
@@ -48,7 +48,7 @@ label mai_hunting:
             play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
-            call mai_hunting
+            call mai_hunting from _call_mai_hunting_1
     
     if targets_hit >= targets_needed:
         jump mai_finish_him
@@ -57,7 +57,7 @@ label mai_hunting:
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
     
-    call mai_hunting
+    call mai_hunting from _call_mai_hunting_2
     
     return
 

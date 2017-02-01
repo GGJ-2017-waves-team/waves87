@@ -13,7 +13,7 @@ label terry_begin_hunt:
     $ shots_fired = 0
     $ targets_hit = 0
 
-    call terry_hunting from _call_terry_hunting
+    call terry_hunting
 
 label terry_finished_him:
     return
@@ -48,7 +48,7 @@ label terry_hunting:
             play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed!"
-            call terry_hunting from _call_terry_hunting_1
+            call terry_hunting
     
     if targets_hit >= targets_needed:
         jump terry_finish_him
@@ -56,7 +56,7 @@ label terry_hunting:
     play audio "miss_sound.ogg"
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed!"
-    call terry_hunting from _call_terry_hunting_2
+    call terry_hunting
     
     return
 

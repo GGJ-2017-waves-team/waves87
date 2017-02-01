@@ -12,7 +12,7 @@ label dog_begin_hunt:
     $ shots_fired = 0
     $ targets_hit = 0
 
-    call dog_hunting
+    call dog_hunting from _call_dog_hunting
 
 label dog_finished_him:
     return
@@ -47,7 +47,7 @@ label dog_hunting:
             play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
-            call dog_hunting
+            call dog_hunting from _call_dog_hunting_1
     
     if targets_hit >= targets_needed:
         jump dog_finish_him
@@ -56,7 +56,7 @@ label dog_hunting:
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
     
-    call dog_hunting
+    call dog_hunting from _call_dog_hunting_2
     
     return
 

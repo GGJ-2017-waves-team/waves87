@@ -52,7 +52,7 @@ label scene6:
         boss "huhhhhh?"
         fugu "This is war!!"
 
-        call fujitsu_begin_hunt from _call_fujitsu_begin_hunt 
+        call fujitsu_begin_hunt 
 
         scene bg waves1
         play music "title_track.mp3" loop

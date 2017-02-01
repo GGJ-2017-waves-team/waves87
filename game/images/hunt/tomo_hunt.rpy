@@ -11,7 +11,7 @@ label tomo_begin_hunt:
     $ shots_fired = 0
     $ targets_hit = 0
 
-    call tomo_hunting
+    call tomo_hunting from _call_tomo_hunting
 
 label tomo_finished_him:
     return
@@ -46,7 +46,7 @@ label tomo_hunting:
             play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
-            call tomo_hunting
+            call tomo_hunting from _call_tomo_hunting_1
     
     if targets_hit >= targets_needed:
         jump tomo_finish_him
@@ -55,7 +55,7 @@ label tomo_hunting:
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
     
-    call tomo_hunting
+    call tomo_hunting from _call_tomo_hunting_2
     
     return
 

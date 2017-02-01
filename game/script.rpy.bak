@@ -66,7 +66,7 @@ image mai = "images/characters/mai1.png"
 # The game starts here.
 
 label start:
-    jump scene2
+
     scene waves
     with fade
     play sound "waves.ogg"
@@ -198,86 +198,84 @@ with dissolve
 ''
 stop music fadeout 2.0
 
-label scene2:
+scene black
+scene dogKanji with fade
 
-    scene black
-    scene dogKanji with fade
+play sound "waves.ogg"
+"{color=#FF1493}D  O  G  E{/color}"
+stop sound fadeout 1.5
 
-    play sound "waves.ogg"
-    "{color=#FF1493}D  O  G  E{/color}"
-    stop sound fadeout 1.5
+scene black
+play music "dogesong.mp3" loop
 
-    scene black
-    play music "dogesong.mp3" loop
+Kawa "Ungh... where am I?...."
+Strange_Voice "...you're dead, buddy.."
 
-    Kawa "Ungh... where am I?...."
-    Strange_Voice "...you're dead, buddy.."
-
-    scene bg brig1:
-        'images/brig1.png'
-        pause 0.75
-        'images/brig2.png'
-        pause 0.75
-        'images/brig3.png'
-        pause 0.75
-        repeat
-    with fade
+scene bg brig1:
+    'images/brig1.png'
+    pause 0.75
+    'images/brig2.png'
+    pause 0.75
+    'images/brig3.png'
+    pause 0.75
+    repeat
+with fade
 
 
-    show dog normal at right with dissolve
+show dog normal at right with fadein
 
-    show dog aggressive:
-        "images/characters/dog2.png"
-        pause 1.5
-        "images/characters/dog3.png"
-        pause 1.5        
-        repeat
+show dog aggressive:
+    "images/characters/dog2.png"
+    pause 1.5
+    "images/characters/dog3.png"
+    pause 1.5        
+    repeat
 
-    show kawa_story normal at left with dissolve
+show kawa_story normal at left with fadein
 
-    show kawa_story:
-        "images/characters/kawa_story.png"
-        pause 3.55
-        "images/characters/kawa_miss.png"
-        pause 0.99
-        repeat
+show kawa_story:
+    "images/characters/kawa_story.png"
+    pause 3.55
+    "images/characters/kawa_miss.png"
+    pause 0.99
+    repeat
 
-    "... ...."
-    "... .... ..."
-    Kawa "Huhh? Who are you!?"
-    play sound "dog-bark.ogg"
-    Doge "woof woof"
-    play sound "dog-bark.ogg"
-    Kawa "Oh, good grief. What is this place?! I need to get out of here."
-    Kawa "woof"
-    Kawa "....I sure am hungry. What's in this bowl over here? Perhaps little doge wouldn't mind if I had just a sip..."
-    Doge "..."
-    Doge ".... ......"
+"... ...."
+"... .... ..."
+Kawa "Huhh? Who are you!?"
+play sound "dog-bark.ogg"
+Doge "woof woof"
+play sound "dog-bark.ogg"
+Kawa "Oh, good grief. What is this place?! I need to get out of here."
+Kawa "woof"
+Kawa "....I sure am hungry. What's in this bowl over here? Perhaps little doge wouldn't mind if I had just a sip..."
+Doge "..."
+Doge ".... ......"
 
-    transform left_to_right:
-        xalign 0.7
+transform left_to_right:
+    xalign 0.7
 
-    image kawa_slide_right:
-        "images/characters/kawa_story.png"
-        xalign 0.0 yalign 1.0
-        linear 3.5 xalign 0.55
+image kawa_slide_right:
+    "images/characters/kawa_story.png"
+    xalign 0.0 yalign 1.0
+    linear 3.5 xalign 0.55
 
-    hide kawa_story normal
-    show kawa_slide_right
+hide kawa_story normal
+show kawa_slide_right
 
-    play sound "dog-growl.ogg"
+play sound "dog-growl.ogg"
 
-    Doge "grrrrr"
+Doge "grrrrr"
 
-    menu:
-        "Fight the dog off":
-            jump post_fight
-        "Try to get the soup and risk fighting the dog":
-            jump post_fight
+menu:
+    "Fight the dog off":
+        jump post_fight
+    "Try to get the soup and risk fighting the dog":
+        jump post_fight
 
 label post_fight:
 
-call dog_begin_hunt from _call_dog_begin_hunt
+call dog_begin_hunt
 
 scene bg brig1:
     'images/brig1.png'

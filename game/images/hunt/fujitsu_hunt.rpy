@@ -13,7 +13,7 @@ label fujitsu_begin_hunt:
     $ shots_fired = 0
     $ targets_hit = 0
 
-    call fujitsu_hunting
+    call fujitsu_hunting from _call_fujitsu_hunting
 
 label fujitsu_finished_him:
     return
@@ -48,7 +48,7 @@ label fujitsu_hunting:
             play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
-            call fujitsu_hunting
+            call fujitsu_hunting from _call_fujitsu_hunting_1
     
     if targets_hit >= targets_needed:
         jump fujitsu_finish_him
@@ -57,7 +57,7 @@ label fujitsu_hunting:
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
     
-    call fujitsu_hunting
+    call fujitsu_hunting from _call_fujitsu_hunting_2
     
     return
 

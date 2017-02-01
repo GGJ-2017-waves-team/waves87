@@ -65,7 +65,7 @@ label scene5:
 
 label fight_terry:
     
-    call terry_begin_hunt from _call_terry_begin_hunt
+    call terry_begin_hunt
 
     scene bg waves1 with dissolve:
         "pirate_waves1.png"

@@ -56,7 +56,7 @@ label scene3:
 
 label fight_tomo:
     
-    call tomo_begin_hunt from _call_tomo_begin_hunt
+    call tomo_begin_hunt
 
     scene black
 
