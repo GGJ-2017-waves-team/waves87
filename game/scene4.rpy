@@ -86,6 +86,6 @@ label scene4:
     f "Yeaaaaaaaaaa. Don't mess with us, lady!!"
     f "Tomo, let's get back to the ship"
 
-    scene black with fadeout
+    scene black 
 
 jump scene5

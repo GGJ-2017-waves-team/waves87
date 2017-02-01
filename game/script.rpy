@@ -66,7 +66,7 @@ image mai = "images/characters/mai1.png"
 # The game starts here.
 
 label start:
-    jump scene2
+
     scene waves
     with fade
     play sound "waves.ogg"
@@ -144,13 +144,15 @@ label start:
     
     menu: 
         "(Say you will dishonor Fujitsu-San's beloved Mom)":
-            jump offBoat
+            jump rhetorical_dude
         "(Insult Fujitsu-san's waistline)":
-            jump offBoat 
+            jump rhetorical_dude 
         "(Say Nothing)":
             jump offBoat
-    label offBoat: 
+    label rhetorical_dude: 
+    Kawa "Oh yea well..."
     Fujitsu "THAT WAS RHETORICAL." 
+    label offBoat:
     Fujitsu "LISTEN UP. I WANT YOU TO THINK ABOUT OUR COMPANY VALUES. YOU SEE..."
     Kawa "(...why did I have to eat that blowfish and get sick? They call me Fugu now. Great. Who wants to be a blowfish...)"
     Fujitsu "...COMPANY VALUE #4 IS INTEGRITY. YOU FAILED TO DEMONSTRATE INTEGRITY WHEN I SENT YOU THE TPS REPORTS ON..."

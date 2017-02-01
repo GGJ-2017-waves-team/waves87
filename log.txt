@@ -1,4 +1,4 @@
-Wed Feb 01 12:57:30 2017
+Wed Feb 01 13:17:32 2017
 Windows-8-6.2.9200
 Ren'Py 6.99.12.2.2029
  
@@ -6,11 +6,11 @@ Ren'Py 6.99.12.2.2029
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.01s
 Loader init took 0.01s
-Loading error handling took 0.09s
-Loading script took 1.94s
+Loading error handling took 0.10s
+Loading script took 1.90s
 Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.22s
+Running init code took 0.19s
 Loading analysis data took 0.00s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
@@ -27,5 +27,5 @@ Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.05s
 Prepare screens took 0.08s
-Save pyanalysis. took 0.08s
+Save pyanalysis. took 0.07s
 Save bytecode. took 0.03s
