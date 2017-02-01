@@ -2,7 +2,6 @@
 label dog_begin_hunt:
     play music "hunt/BattleSuperShort.mp3" loop
 
-    
     image bg battle_bg = "battle_bg.jpg"
 
     image dog_target:
@@ -45,6 +44,7 @@ label dog_hunting:
             $ targets_hit = targets_hit + 1
             if targets_hit >= targets_needed:
                 jump dog_finish_him
+            play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
             call dog_hunting
@@ -52,6 +52,7 @@ label dog_hunting:
     if targets_hit >= targets_needed:
         jump dog_finish_him
     
+    play audio "miss_sound.ogg"
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
     
@@ -61,6 +62,8 @@ label dog_hunting:
 
 label dog_finish_him:
     
+    stop music fadeout 3.0
+
     image dog_finished:
         "hunt/dog_head.png"
         xalign 0.5 yalign 0.5

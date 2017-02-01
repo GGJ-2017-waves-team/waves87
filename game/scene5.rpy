@@ -9,10 +9,12 @@ label scene5:
     image bg kanji_group_leader = "kanji_group_leader.png"
 
     scene bg kanji_group_leader with dissolve
+
+    play sound "waves.ogg"
+    "{color=#FF1493}G  R  O  U  P    L  E  A  D  E  R{/color}"
+    stop sound fadeout 1.5
+
     play music "cruisin_tough.mp3" loop 
-
-    "G R O U P  L E A D E R"
-
     scene bg waves1 with dissolve:
         "pirate_waves1.png"
         pause 0.75

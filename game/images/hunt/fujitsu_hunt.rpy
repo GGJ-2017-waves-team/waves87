@@ -45,6 +45,7 @@ label fujitsu_hunting:
             $ targets_hit = targets_hit + 1
             if targets_hit >= targets_needed:
                 jump fujitsu_finish_him
+            play audio "punch-hit.ogg"
             with hpunch
             "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
             call fujitsu_hunting
@@ -52,6 +53,7 @@ label fujitsu_hunting:
     if targets_hit >= targets_needed:
         jump fujitsu_finish_him
     
+    play audio "miss_sound.ogg"
     with vpunch
     "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
     
@@ -60,6 +62,8 @@ label fujitsu_hunting:
     return
 
 label fujitsu_finish_him:
+    
+    stop music fadeout 3.0
     
     image fujitsu_finished:
         "hunt/fujitsu_head.png"

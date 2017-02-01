@@ -9,8 +9,11 @@ label scene3:
 
     scene bg kanji_friend with dissolve
 
-    "F R I E N D"
+    play sound "waves.ogg"
+    "{color=#FF1493}F  R  I  E  N  D{/color}"
+    stop sound fadeout 1.5
 
+    play music "cruisin_2.mp3" loop
     scene bg waves1 with dissolve:
         "pirate_waves1.png"
         pause 0.75

@@ -45,22 +45,25 @@ label terry_hunting:
             $ targets_hit = targets_hit + 1
             if targets_hit >= targets_needed:
                 jump terry_finish_him
+            play audio "punch-hit.ogg"
             with hpunch
-            "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed! "
+            "You Hit! [targets_hit] / [targets_needed] Needed Hits Landed!"
             call terry_hunting
     
     if targets_hit >= targets_needed:
         jump terry_finish_him
     
+    play audio "miss_sound.ogg"
     with vpunch
-    "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed! "
-    
+    "You WHIFFED! [targets_hit] / [targets_needed] Needed Hits Landed!"
     call terry_hunting
     
     return
 
 label terry_finish_him:
     
+    stop music fadeout 3.0
+
     image terry_finished:
         "hunt/terry_head.png"
         xalign 0.5 yalign 0.5

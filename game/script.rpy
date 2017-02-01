@@ -4,7 +4,7 @@ init python:
     config.screen_height = 720
     build.name = "waves87"
 
-define Kawa = Character("Kawa", color=(0, 0, 200, 255))
+define Kawa = Character("Kawa", color=(0, 100, 255, 255))
 define coWorkers = Character("Co-Workers")
 define Fujitsu = Character("Fujitsu-San (THE BOSS)", color=(200, 0, 200, 255))
 define Misc = Character("Miscellaneous Co-Workers")
@@ -15,17 +15,17 @@ define Crowd = Character("Crowd")
 define Mai = Character("Mai (NOTORIOUS RIVAL GANG LEADER)", color=(0, 200, 200, 255))
 define Terry = Character("Terry (CAPTAIN OF THE RIGGER)", color=(200, 0, 200, 255))
 define T = Character("Tomo", color=(0, 200, 0, 255))
-define K = Character("Kawa", color=(0, 0, 200, 255))
+define K = Character("Kawa", color=(0, 100, 255, 255))
 define Doge = Character('Doge', color=(200, 200, 0, 255))
 define Strange_Voice = Character('Strange Voice')
 define Tomo = Character('Tomo', color=(0, 200, 0, 255))
-define F = Character("Fugu", color=(0, 0, 200, 255))
+define F = Character("Fugu", color=(0, 100, 255, 255))
 define tr = Character("Terry")
-define fugu = Character("Fugu", color=(0, 0, 200, 255))
+define fugu = Character("Fugu", color=(0, 100, 255, 255))
 define tomo = Character('Tomo', color=(0, 200, 0, 255))
 define boss = Character("Fujitsu-San (THE BOSS)", color=(200, 0, 200, 255))
 define terry = Character("Terry (Captain)", color=(200, 200, 200, 255))
-define f = Character("Fugu", color=(0, 0, 200, 255))
+define f = Character("Fugu", color=(0, 100, 255, 255))
 define t = Character("Tomo", color=(0, 200, 0, 255))
 define m = Character("Mai", color=(0, 200, 200, 255))
 
@@ -69,8 +69,10 @@ label start:
 
     scene waves
     with fade
-    "(WAVES)"
-    play music "cruisin_2.mp3" loop
+    play sound "waves.ogg"
+    "{color=#FF1493}W  A  V  E  S{/color}"
+    stop sound fadeout 1.5
+    play music [ "<silence 2.0>", "cruisin_2.mp3" ] fadein 1.5 loop
 
     coWorkers "Hey Fugu, you feeling alright there sport?"
     coWorkers "Hah, this loser. Late on filing his TPS reports for the third time, now he's seasick on a cruiseship." 
@@ -154,22 +156,21 @@ label start:
     Fujitsu "...COMPANY VALUE #4 IS INTEGRITY. YOU FAILED TO DEMONSTRATE INTEGRITY WHEN I SENT YOU THE TPS REPORTS ON..."
     Kawa "(... I justed wanted to impress management...Working for KANJI Corp. is all I've ever wanted. Years of school..."
     Fujitsu "HEY. ARE YOU EVEN LISTENING?" 
-    play audio "phone-ringing.wav"
+    play audio "phone-ringing.ogg"
     "(PHONE RINGS)"
     Fujitsu "OK, NO SHUT UP. I NEED TO TAKE THIS CALL ON MY CELLULAR PHONE. "
     Fujitsu "WHEN I COME BACK WE'RE GONNA TALK ABOUT YOUR FUTURE AT THIS COMPANY." 
     hide fujitsu with moveoutright 
     Kawa "..."
     stop music fadeout 2.0
-    play music "waves.wav" loop
+    play sound "waves.ogg" loop
     hide fuguUncomfortable2
     show kawaMiss
     Kawa "(...He's going to fire me. I'm going to get fired on the company cruise.)" 
     Kawa "(I refuse to go on as Fugu. I'm done)"
     hide kawaMiss
     show fuguUncomfortable
-    ''
-    '' 
+    '...'
     image fuguUncomfortableSlide:
         "images/characters/fugu1.png"
         xalign 0.5 yalign 1.0
@@ -180,7 +181,7 @@ label start:
     
     hide fuguUncomfortableSlide
     show kawaPoo at left
-    play audio "seagull.wav"
+    play audio "seagull.ogg"
     "Splat!"
     hide kawaPoo at left
     show kawaMiss at left 
@@ -192,17 +193,20 @@ label start:
 scene black 
 play music "title_track.mp3" loop
 scene bg logo 
-''
-''
-''
 with dissolve
+''
+''
 stop music fadeout 2.0
 
-play music "dogesong.mp3" loop
 scene black
 scene dogKanji with fade
-"(DOG)"
+
+play sound "waves.ogg"
+"{color=#FF1493}D  O  G  E{/color}"
+stop sound fadeout 1.5
+
 scene black
+play music "dogesong.mp3" loop
 
 Kawa "Ungh... where am I?...."
 Strange_Voice "...you're dead, buddy.."
@@ -218,7 +222,7 @@ scene bg brig1:
 with fade
 
 
-show dog normal at right
+show dog normal at right with fadein
 
 show dog aggressive:
     "images/characters/dog2.png"
@@ -227,7 +231,7 @@ show dog aggressive:
     pause 1.5        
     repeat
 
-show kawa_story normal at left
+show kawa_story normal at left with fadein
 
 show kawa_story:
     "images/characters/kawa_story.png"
@@ -239,7 +243,9 @@ show kawa_story:
 "... ...."
 "... .... ..."
 Kawa "Huhh? Who are you!?"
+play sound "dog-bark.ogg"
 Doge "woof woof"
+play sound "dog-bark.ogg"
 Kawa "Oh, good grief. What is this place?! I need to get out of here."
 Kawa "woof"
 Kawa "....I sure am hungry. What's in this bowl over here? Perhaps little doge wouldn't mind if I had just a sip..."
@@ -256,6 +262,8 @@ image kawa_slide_right:
 
 hide kawa_story normal
 show kawa_slide_right
+
+play sound "dog-growl.ogg"
 
 Doge "grrrrr"
 

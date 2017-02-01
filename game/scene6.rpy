@@ -16,9 +16,11 @@ label scene6:
 
     scene bg king 
     with fade
-    play music "title_track.mp3" loop
-    "(KING)"
+    play sound "waves.ogg"
+    "{color=#FF1493}K I N G{/color}"
+    stop sound fadeout 1.5
 
+    play music "title_track.mp3" loop
     scene bg waves1:
         "images/waves1.png"
         pause 0.6
@@ -65,4 +67,9 @@ label scene6:
 
         scene black with dissolve
 
-        return
+        scene bg logo 
+        with dissolve
+        "And so Fugu and his crew sailed the '87 seas for riches and glory..."
+        "And so Fugu and his crew sailed the '87 seas for riches and glory..."
+        ' T H E E N D'
+        ''
