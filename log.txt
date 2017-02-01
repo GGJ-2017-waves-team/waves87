@@ -1,16 +1,16 @@
-Tue Jan 31 16:29:35 2017
+Tue Jan 31 18:31:34 2017
 Windows-8-6.2.9200
 Ren'Py 6.99.12.2.2029
  
 
-Bootstrap to the start of init.init took 0.13s
+Bootstrap to the start of init.init took 0.06s
 Early init took 0.01s
-Loader init took 0.05s
-Loading error handling took 0.03s
-Loading script took 0.18s
+Loader init took 0.02s
+Loading error handling took 0.02s
+Loading script took 0.14s
 Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.10s
+Running init code took 0.08s
 Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -26,16 +26,16 @@ Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.05s
-Prepare screens took 0.04s
+Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.06s
+Save bytecode. took 0.04s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.01s
+Interface start took 0.00s
 
 primary display bounds: (0, 0, 3840, 2160)
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(2977, 1675) drawable=(2977, 1675)
+Screen sizes: virtual=(1280, 720) physical=(2960, 1665) drawable=(2960, 1665)
 Vendor: 'Intel'
 Renderer: 'Intel(R) HD Graphics 4600'
 Version: '4.3.0 - Build 20.19.15.4549'
@@ -254,11 +254,11 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 1.52199983597s
+Total time until interface ready: 1.00999999046s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.073000 seconds.
-- Frame drawn at 0.094000 seconds.
-- Frame drawn at 0.127000 seconds.
-- Frame drawn at 0.161000 seconds.
-- 0.161000 seconds to render 5 frames.
+- Frame drawn at 0.015000 seconds.
+- Frame drawn at 0.031000 seconds.
+- Frame drawn at 0.065000 seconds.
+- Frame drawn at 0.081000 seconds.
+- 0.081000 seconds to render 5 frames.

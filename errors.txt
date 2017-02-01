@@ -2,8 +2,6 @@
 errors listed below, and try again.
 
 
-File "game/scene6.rpy", line 66: expected statement.
-    repeat
-          ^
+File "game/images/hunt/terry_hunt.rpy", line 58: indentation mismatch.
 
 Ren'Py Version: Ren'Py 6.99.12.2.2029
